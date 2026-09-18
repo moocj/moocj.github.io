@@ -1,9 +1,9 @@
-# Dev portfolio 
+# Dev portfolio
 
-## What is this? 
+## What is this?
 
-A WIP dev portfolio to showcase current frontend ability and to host other projects/information about me. 
+A WIP dev portfolio to showcase current frontend ability and to host other projects/information about me.
 
 ## Current progress
 
-Nothing built yet. 
+Nothing built yet.
