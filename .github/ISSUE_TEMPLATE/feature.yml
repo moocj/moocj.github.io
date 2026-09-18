@@ -1,0 +1,37 @@
+name: Feature request
+description: A new feature for the site that doesn't exist yet.
+title: "feat: "
+labels: ["type:feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        What the feature is, what the user sees, how the user uses it.
+  - type: textarea
+    id: what
+    attributes:
+      label: What should happen
+      description: The behaviour for the user.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What it fixes or what it's purpose is.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Acceptance criteria
+      description: The criteria to show the feature is complete.
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: Optional. Anything the feature doesn't do but may be related / required later.
+    validations:
+      required: false
