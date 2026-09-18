@@ -30,6 +30,10 @@ gets merged in rather than working on that branch.
     spike: prototype the job queue (throwaway, decision in ADR-0004)
     content: tighten the case study opening
 
+## Merging
+
+Merge commits only. Squash and rebase are disabled in the repository settings, and
+pushed history is never rewritten.
 
 ## Definition of done
 
@@ -43,6 +47,7 @@ gets merged in rather than working on that branch.
 
 | Path | What belongs there |
 |---|---|
+| `docs/decisions/` | One ADR per real decision, `NNNN-slug.md` |
 | `docs/ideas.md` | Ideas that aren't in scope yet. |
 | `docs/roadmap.md` | Milestones and what each does |
 | `docs/project-board.md` | Status, current branch, open PR |
