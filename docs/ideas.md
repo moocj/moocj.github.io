@@ -4,7 +4,8 @@ Any ideas for the portfolio/projects I have will go here.
 
 ## Portfolio ideas
 
-- Cool custom font (19/06/26)
+- Cool custom font (19/09/26)
+- Some sort of way to preview changes to pages when making PRs ? (19/09/26)
 
 ## Project ideas
 
