@@ -6,10 +6,10 @@ A WIP dev portfolio to showcase current frontend ability and to host other proje
 
 ## Built with
 
-Planned to be built using HTML, CSS and JavaScript, with no external frameworks until/unless I learn one.
+Built using HTML, CSS and JavaScript, with no external frameworks until/unless I learn one.
 
 ## Current progress
 
-Nothing built yet.
+The page exists with no styling and basic information.
 
 Future ideas are stored [here](docs/ideas.md)

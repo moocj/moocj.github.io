@@ -6,7 +6,7 @@ The source for my portfolio, served from moocj.github.io.
 
 ## How to run it
 
-There is nothing to run yet. Until then this repository has just the basic files.
+Open "index.html" in a browser.
 
 ## Workflow
 
@@ -49,6 +49,7 @@ pushed history is never rewritten.
 |---|---|
 | `docs/page-plan.md` | What the page is and how it will work/look. |
 | `docs/ideas.md` | Ideas that aren't in scope yet. |
+| `docs/progress` | Screenshots of the page as development goes on.. |
 | `CHANGELOG.md` | User-facing changes, per release |
 
 ## Questions
