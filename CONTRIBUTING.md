@@ -22,12 +22,12 @@ gets merged in rather than working on that branch.
 
     feat: render the project section from src/data
     fix: correct the pages base path for a project site
-    docs: add ADR-0003 for the engine/adapter split
+    docs: sketch the main page
     chore: pin node 24 in the ci workflow
     refactor: move styles.css under src/
     test: cover tab completion with no matches
     perf: lazy-load the machine behind the toggle
-    spike: prototype the job queue (throwaway, decision in ADR-0004)
+    content: replace any placeholders
     content: tighten the case study opening
 
 ## Merging
@@ -40,17 +40,15 @@ pushed history is never rewritten.
 - [ ] Every acceptance criterion in the issue is met
 - [ ] The PR explains how it was verified, with evidence
 - [ ] The PR is merged and the issue is closed
-- [ ] The board and docs/project-board.md are updated.
+- [ ] The board is updated.
 
 
 ## Where things are
 
 | Path | What belongs there |
 |---|---|
-| `docs/decisions/` | One ADR per real decision, `NNNN-slug.md` |
+| `docs/page-plan.md` | What the page is and how it will work/look. |
 | `docs/ideas.md` | Ideas that aren't in scope yet. |
-| `docs/roadmap.md` | Milestones and what each does |
-| `docs/project-board.md` | Status, current branch, open PR |
 | `CHANGELOG.md` | User-facing changes, per release |
 
 ## Questions
