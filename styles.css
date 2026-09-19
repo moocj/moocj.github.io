@@ -1,0 +1,76 @@
+:root {
+    /* Basic page colours */
+    --page: #ffffff;
+    --text: #111111;
+    --accent: #0b5fff;
+
+    /* Spacing steps. */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 2rem;
+}
+
+body {
+    /* REDO later*/
+    max-width: 60ch;
+    margin-inline: auto;
+    padding: var(--space-2);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+background-color: var(--page)
+}
+
+h1,h2,h3 {
+    line-height: 1.2;
+    margin: 0 0 var(--space-1);
+}
+
+/* REDO later (h1 -> h3)*/
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+    margin-top: var(--space-3);
+}
+h3 {
+    font-size: 1.125rem;
+}
+
+p {
+    margin: 0 0 var(--space-2);
+}
+
+a {
+    color: var(--accent);
+}
+
+header {
+    padding-bottom: var(--space-2);
+}
+
+nav ul {
+    display: flex;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+section ul {
+    padding-left: var(--space-2);
+}
+
+section li {
+    margin-bottom: var(--space-1);
+}
+
+footer {
+    margin-top: var(--space-3);
+    padding-top: var(--space-2);
+    font-size: 0.875rem;
+}
+
+

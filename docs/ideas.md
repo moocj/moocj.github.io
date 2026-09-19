@@ -4,6 +4,7 @@ Any ideas for the portfolio/projects I have will go here.
 
 ## Portfolio ideas
 
+- Cool custom font (19/06/26)
 
 ## Project ideas
 
