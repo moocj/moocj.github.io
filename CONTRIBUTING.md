@@ -8,6 +8,10 @@ The source for my portfolio, served from moocj.github.io.
 
 Open "index.html" in a browser.
 
+## Deployment
+
+Pushing to main now uses the `.github/workflows/pages.yml` file so merging PRs deploys.
+
 ## Workflow
 
 One ticket, one branch, one pull request. `main` is protected, so work
