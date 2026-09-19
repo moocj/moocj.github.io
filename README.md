@@ -10,6 +10,6 @@ Built using HTML, CSS and JavaScript, with no external frameworks until/unless I
 
 ## Current progress
 
-The page exists with basic styling and information.
+The page exists with basic styling and information and cards for the projects.
 
 Future ideas are stored [here](docs/ideas.md)
