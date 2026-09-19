@@ -88,3 +88,11 @@ footer {
 }
 
 
+/* Mobile CSS */
+@media (max-width: 40rem) {
+    nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+}
