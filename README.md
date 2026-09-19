@@ -11,3 +11,5 @@ Planned to be built using HTML, CSS and JavaScript, with no external frameworks 
 ## Current progress
 
 Nothing built yet.
+
+Future ideas are stored [here](docs/ideas.md)
