@@ -2,7 +2,7 @@
 
 const desktop = document.querySelector("#desktop");
 const openButton = document.querySelector("[data-desktop-open]");
-const closeButton = document.querySelector("[data-desktop-close");
+const closeButton = document.querySelector("[data-desktop-close]");
 const appButtons = [...document.querySelectorAll("[data-app-open]")];
 const apps = [...document.querySelectorAll("[data-app]")];
 const appCloseButtons = [...document.querySelectorAll("[data-app-close]")];
@@ -42,7 +42,7 @@ function openDesktop() {
 }
 
 function toggleDesktop() {
-  if (desktop.open) desktop.closest();
+  if (desktop.open) desktop.close();
   else openDesktop();
 }
 
