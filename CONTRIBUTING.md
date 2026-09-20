@@ -7,10 +7,17 @@ The source for my portfolio, served from moocj.github.io.
 ## How to run it
 
 ```bash
-npm install
+    npm install
 
-npm run dev
+    npm run dev
 ```
+
+## Linting
+
+```bash
+    npm run lint
+
+    npm run format:check
 
 ## Deployment
 
