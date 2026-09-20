@@ -11,6 +11,7 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/src/styles/site.css" />
+    <script type="module" src="/src/shell/shell.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -24,6 +25,9 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <button type="button" class="desktop-open" data-desktop-open aria-keyshortcuts="Control+`">
+        Desktop <kbd>Ctrl + `</kbd>
+      </button>
     </header>
 
     <main id="main" tabindex="-1">
@@ -70,5 +74,45 @@
     <footer>
       <p>Hosted on github pages.</p>
     </footer>
+    <dialog id="desktop" class="desktop" aria-labelledby="desktop-title">
+      <h2 id="desktop-title" class="visually-hidden">Desktop</h2>
+      <div class="desktop__surface">
+        <section
+          class="app"
+          id="app-terminal"
+          data-app="terminal"
+          aria-labelledby="app-terminal-title"
+        >
+          <header class="app__bar">
+            <h3 id="app-terminal-title" class="app__title">Terminal</h3>
+            <button type="button" class="app__close" data-app-close>Close</button>
+          </header>
+          <div class="app__body">
+            <div class="terminal__scrollback" role="log" aria-label="Terminal output" tabindex="0">
+              <!-- TODO : replace this with engine -->
+              <p class="terminal__line">PLACEHOLDER</p>
+            </div>
+            <label class="visually-hidden" for="terminal-input">Command</label>
+            <input
+              id="terminal-input"
+              class="terminal__input"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="try: help"
+            />
+          </div>
+        </section>
+      </div>
+
+      <nav class="taskbar" aria-label="Desktop apps">
+        <button type="button" class="taskbar__app" data-app-open="terminal" aria-pressed="true">
+          Terminal
+        </button>
+        <button type="button" class="taskbar__exit" data-desktop-close>
+          Close desktop <kbd>Esc</kbd>
+        </button>
+      </nav>
+    </dialog>
   </body>
 </html>

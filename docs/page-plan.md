@@ -12,3 +12,7 @@ The proposed sections for my project are:
 - 2. Projects -> Any projects I have/am working on and links to them.
 - 3. About -> Standard information that is a bit deeper about my computer science/real life.
 - 4. Contact -> Simple ways to contact me.
+
+## The desktop
+
+Second page that contains a simple desktop OS, with a taskbar, app windows, applications on the display, and a 'working' terminal.
