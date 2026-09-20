@@ -20,6 +20,12 @@ The source for my portfolio, served from moocj.github.io.
     npm run format:check
 ```
 
+## Testing
+
+```bash
+    npm test
+```
+
 ## Deployment
 
 Pushing to main now uses the `.github/workflows/pages.yml` file so merging PRs deploys.
@@ -33,6 +39,7 @@ gets merged in rather than working on that branch.
     fix/<slug>         # a bug
     docs/<slug>        # documentation only
     chore/<slug>       # tooling, tracker, config
+    test/<slug>        # tests only
 
 ## Commits
 
