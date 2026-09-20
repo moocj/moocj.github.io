@@ -1,124 +1,132 @@
 :root {
-    /* Basic page colours */
-    /* These are placeholders for now */
-    --page: #ffffff;
-    --text: #111111;
-    --accent: #0b5fff;
-    --line: #e2e2e2;
+  /* Basic page colours */
+  /* These are placeholders for now */
+  --page: #ffffff;
+  --text: #111111;
+  --accent: #0b5fff;
+  --line: #e2e2e2;
 
-    /* Spacing steps. */
-    --space-1: 0.5rem;
-    --space-2: 1rem;
-    --space-3: 2rem;
+  /* Spacing steps. */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
 }
 
 body {
-    max-width: 64rem;
-    margin-inline: auto;
-    padding: var(--space-2);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text);
-    background-color: var(--page);
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: var(--space-2);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--page);
 }
 
-h1,h2,h3 {
-    line-height: 1.2;
-    margin: 0 0 var(--space-1);
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--space-1);
 }
 
 /* REDO later (h1 -> h3)*/
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 h2 {
-    font-size: 1.5rem;
-    margin-top: var(--space-3);
+  font-size: 1.5rem;
+  margin-top: var(--space-3);
 }
 h3 {
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 p {
-    margin: 0 0 var(--space-2);
-    max-width: 60ch;
+  margin: 0 0 var(--space-2);
+  max-width: 60ch;
 }
 
 a {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 /* Keyboard nav accessibility stuff */
 :focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 2px;
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .skip-link {
-    position: fixed;
-    top: -4rem;
-    left: 0;
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding-inline: var(--space-2);
-    background-color: var(--text);
-    color: var(--page);
+  position: fixed;
+  top: -4rem;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--space-2);
+  background-color: var(--text);
+  color: var(--page);
 }
 
 .skip-link:focus {
-    top: 0;
+  top: 0;
 }
 
 main:focus {
-    outline: none;
+  outline: none;
 }
 
 header {
-    padding-bottom: var(--space-2);
+  padding-bottom: var(--space-2);
 }
 
 nav ul {
-    display: flex;
-    gap: var(--space-2);
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: var(--space-2);
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .card {
-    border: 1px solid var(--line);
-    border-radius: 0.5rem;
-    padding: var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: var(--space-2);
 }
 
 .stack {
-    margin-bottom: 0;
-    font-size: 0.875rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
 }
 
 footer {
-    margin-top: var(--space-3);
-    padding-top: var(--space-2);
-    font-size: 0.875rem;
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  font-size: 0.875rem;
 }
-
 
 /* Mobile CSS */
 @media (max-width: 40rem) {
-    nav a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-    }
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
 }

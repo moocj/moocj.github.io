@@ -7,6 +7,7 @@ The purpose of this portfolio is to showcase my progression in frontend knowledg
 ## Sections
 
 The proposed sections for my project are:
+
 - 1. Header -> Basic information about me and my current life.
 - 2. Projects -> Any projects I have/am working on and links to them.
 - 3. About -> Standard information that is a bit deeper about my computer science/real life.
