@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/src/styles/site.css" />
-    <script type="module" src="/src/shell/shell.js"></script>
+    <script type="module" src="/src/shell/entry.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -88,10 +88,12 @@
             <button type="button" class="app__close" data-app-close>Close</button>
           </header>
           <div class="app__body">
-            <div class="terminal__scrollback" role="log" aria-label="Terminal output" tabindex="0">
-              <!-- TODO : replace this with engine -->
-              <p class="terminal__line">PLACEHOLDER</p>
-            </div>
+            <div
+              class="terminal__scrollback"
+              role="log"
+              aria-label="Terminal output"
+              tabindex="0"
+            ></div>
             <label class="visually-hidden" for="terminal-input">Command</label>
             <input
               id="terminal-input"
