@@ -18,6 +18,7 @@ The source for my portfolio, served from moocj.github.io.
     npm run lint
 
     npm run format:check
+```
 
 ## Deployment
 

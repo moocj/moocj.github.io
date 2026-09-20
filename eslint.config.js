@@ -22,6 +22,5 @@ export default defineConfig([
     languageOptions: { globals: globals.node },
   },
 
-
   prettier,
 ]);
