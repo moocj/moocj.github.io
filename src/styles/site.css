@@ -10,6 +10,7 @@
   --shell-bg: #0d1117;
   --shell-text: #e6edf3;
   --shell-line: #30363d;
+  --shell-error: #ffa198;
 
   /* Spacing steps. */
   --space-1: 0.5rem;
@@ -279,6 +280,15 @@ footer {
   margin: 0 0 var(--space-1);
   max-width: none;
   opacity: 0.8;
+}
+
+.terminal__line--input {
+  opacity: 0.5;
+}
+
+.terminal__line--error {
+  color: var(--shell-error);
+  opacity: 1;
 }
 
 .terminal__input {

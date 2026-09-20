@@ -14,7 +14,7 @@ describe("the terminal engine", () => {
     const session = ["help", "date", "clear", "nonsense", "  ", ""].map((line) => engine.run(line));
 
     expect(session[0].lines.map((line) => line.text)).toEqual([
-      "help    List the commands this terminal knows",
+      "help    List the commands the terminal knows",
       "date    Print the current date and time, in UTC",
       "clear   Clear the screen",
     ]);

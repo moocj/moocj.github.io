@@ -15,4 +15,4 @@ The proposed sections for my project are:
 
 ## The desktop
 
-Second page that contains a simple desktop OS, with a taskbar, app windows, applications on the display, and a 'working' terminal.
+Second view that contains a simple desktop OS, with a taskbar, app windows, applications on the display, and a working terminal.
