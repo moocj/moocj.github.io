@@ -6,6 +6,7 @@ Any ideas for the portfolio/projects I have will go here.
 
 - Cool custom font (19/09/26)
 - Some sort of way to preview changes to pages when making PRs ? (19/09/26)
+- Desktop apps for each project and main section (20/09/26)
 
 ## Project ideas
 

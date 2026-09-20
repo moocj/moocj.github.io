@@ -6,7 +6,11 @@ The source for my portfolio, served from moocj.github.io.
 
 ## How to run it
 
-Open "index.html" in a browser.
+```bash
+npm install
+
+npm run dev
+```
 
 ## Deployment
 
@@ -17,10 +21,10 @@ Pushing to main now uses the `.github/workflows/pages.yml` file so merging PRs d
 One ticket, one branch, one pull request. `main` is protected, so work
 gets merged in rather than working on that branch.
 
-    feature/<issue>-<slug>     # a new feature
-    fix/<issue>-<slug>         # a bug
-    docs/<issue>-<slug>        # documentation only
-    chore/<issue>-<slug>       # tooling, tracker, config
+    feature/<slug>     # a new feature
+    fix/<slug>         # a bug
+    docs/<slug>        # documentation only
+    chore/<slug>       # tooling, tracker, config
 
 ## Commits
 
@@ -39,14 +43,6 @@ gets merged in rather than working on that branch.
 Merge commits only. Squash and rebase are disabled in the repository settings, and
 pushed history is never rewritten.
 
-## Definition of done
-
-- [ ] Every acceptance criterion in the issue is met
-- [ ] The PR explains how it was verified, with evidence
-- [ ] The PR is merged and the issue is closed
-- [ ] The board is updated.
-
-
 ## Where things are
 
 | Path | What belongs there |
@@ -55,6 +51,3 @@ pushed history is never rewritten.
 | `docs/ideas.md` | Ideas that aren't in scope yet. |
 | `docs/progress` | Screenshots of the page as development goes on. |
 
-## Questions
-
-Open an issue with a 'needs-decision' label until it's been seen.

@@ -24,17 +24,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7              # CHECK: latest major
 
+      - name: Set up Node
+        uses: actions/setup-node@v7            # CHECK: latest major
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
       - name: Configure Pages
         uses: actions/configure-pages@v6       # CHECK: latest major
 
-      - name: Upload the site
+      - name: Upload the built site
         uses: actions/upload-pages-artifact@v5 # CHECK: latest major
         with:
-          path: "."
+          path: "./dist"
 
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5          # CHECK: latest major
 
-      - name: Print the URL 
+      - name: Print the URL
         run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
