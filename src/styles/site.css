@@ -6,6 +6,11 @@
   --accent: #0b5fff;
   --line: #e2e2e2;
 
+  /* Shell palette. */
+  --shell-bg: #0d1117;
+  --shell-text: #e6edf3;
+  --shell-line: #30363d;
+
   /* Spacing steps. */
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -129,4 +134,198 @@ footer {
     align-items: center;
     min-height: 44px;
   }
+}
+
+/* Desktop CSS */
+
+.desktop-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  margin-top: var(--space-1);
+  padding: 0 var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: none;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.desktop-open kbd,
+.app__close kbd,
+.taskbar__exit kbd {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+.desktop {
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--shell-bg);
+  color: var(--shell-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.desktop[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.desktop__surface {
+  flex: 1 1 auto;
+  display: grid;
+  place-items: center;
+  padding: var(--space-2);
+  overflow: auto;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: min(56rem, 100%);
+  height: min(34rem, 100%);
+  overflow: hidden;
+  border: 1px solid var(--shell-line);
+  border-radius: 0.5rem;
+  background-color: var(--shell-bg);
+}
+
+.app__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid var(--shell-line);
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.app__title {
+  margin: 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.app__close,
+.taskbar__app,
+.taskbar__exit {
+  border: 1px solid var(--shell-line);
+  border-radius: 0.25rem;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.app__close {
+  padding: 0.125rem 0.5rem;
+}
+
+.taskbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-top: 1px solid var(--shell-line);
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.taskbar__app,
+.taskbar__exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  padding: 0 var(--space-2);
+}
+
+/* button pressed state */
+.taskbar__app[aria-pressed="true"] {
+  border-color: var(--shell-text);
+  background-color: rgb(255 255 255 / 0.12);
+}
+
+.taskbar__exit {
+  margin-left: auto;
+  border-color: transparent;
+}
+
+.terminal__scrollback {
+  flex: 1 1 auto;
+  min-height: 10rem;
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+.terminal__line {
+  margin: 0 0 var(--space-1);
+  max-width: none;
+  opacity: 0.8;
+}
+
+.terminal__input {
+  font: inherit;
+  font-size: 16px;
+  padding: var(--space-1) var(--space-2);
+  border: 0;
+  border-top: 1px solid var(--shell-line);
+  background: none;
+  color: inherit;
+}
+
+.terminal__input::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+.terminal__input:focus-visible,
+.terminal__scrollback:focus-visible {
+  outline-offset: -4px;
+}
+
+@media (max-width: 35rem) {
+  .desktop__surface {
+    padding: 0;
+  }
+
+  .app {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+.app[hidden] {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
