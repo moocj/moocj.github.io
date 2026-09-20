@@ -7,10 +7,17 @@ The source for my portfolio, served from moocj.github.io.
 ## How to run it
 
 ```bash
-npm install
+    npm install
 
-npm run dev
+    npm run dev
 ```
+
+## Linting
+
+```bash
+    npm run lint
+
+    npm run format:check
 
 ## Deployment
 
@@ -45,9 +52,8 @@ pushed history is never rewritten.
 
 ## Where things are
 
-| Path | What belongs there |
-|---|---|
-| `docs/page-plan.md` | What the page is and how it will work/look. |
-| `docs/ideas.md` | Ideas that aren't in scope yet. |
-| `docs/progress` | Screenshots of the page as development goes on. |
-
+| Path                | What belongs there                              |
+| ------------------- | ----------------------------------------------- |
+| `docs/page-plan.md` | What the page is and how it will work/look.     |
+| `docs/ideas.md`     | Ideas that aren't in scope yet.                 |
+| `docs/progress`     | Screenshots of the page as development goes on. |
