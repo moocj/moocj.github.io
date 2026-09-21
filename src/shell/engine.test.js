@@ -7,7 +7,10 @@ import { commands } from "./commands.js";
 import { createEngine } from "./engine.js";
 
 const FAKE_NOW = "2026-09-20T18:30:00.000Z";
+const clock = () => new Date(FAKE_NOW);
 const engine = createEngine({ clock: () => new Date(FAKE_NOW), commands });
+
+const textsOf = (input) => engine.run(input).lines.map((line) => line.text);
 
 describe("the terminal engine", () => {
   it("answers a whole session and reports every line as an object", () => {
@@ -58,3 +61,35 @@ describe("the terminal engine", () => {
     }
   });
 });
+
+describe("near misses", () => {
+  // NEW
+  it("names the command you probably meant", () => {
+    // NEW
+    expect(textsOf("hlep")).toEqual(["command not found: hlep", "did you mean: help?"]); // NEW
+    expect(textsOf("clera")).toEqual(["command not found: clera", "did you mean: clear?"]); // NEW
+  }); // NEW
+  // NEW
+  it("says nothing at all when nothing is close", () => {
+    // NEW
+    // NEW: a wrong guess costs more than no guess, so this has to stay silent.
+    expect(textsOf("nonsense")).toEqual(["command not found: nonsense"]); // NEW
+    expect(textsOf("xyz")).toEqual(["command not found: xyz"]); // NEW
+  }); // NEW
+  // NEW
+  it("guesses from the registry it was given, not from a list of its own", () => {
+    // NEW
+    const echo = {
+      name: "echo",
+      description: "Repeat what you type",
+      run: () => ({ lines: [], effect: null }),
+    }; // NEW
+    const onlyEcho = createEngine({ clock, commands: [echo] }); // NEW
+    // NEW
+    expect(onlyEcho.run("ecoh").lines[1].text).toBe("did you mean: echo?"); // NEW
+    // NEW: ...and the real commands are not in there, so they are not suggested.
+    expect(onlyEcho.run("help").lines).toEqual([
+      { kind: "error", text: "command not found: help" },
+    ]); // NEW
+  }); // NEW
+}); // NEW
