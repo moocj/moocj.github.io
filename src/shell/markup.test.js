@@ -12,7 +12,13 @@ const read = (path) => readFileSync(`${root}${path}`, "utf8");
 
 const html = read("index.html");
 const css = read("src/styles/site.css");
-const scripts = ["src/shell/shell.js", "src/shell/adapter.js", "src/shell/entry.js"]
+
+const scripts = [
+  "src/shell/shell.js",
+  "src/shell/adapter.js",
+  "src/shell/entry.js",
+  "src/render/projects.js",
+]
   .map(read)
   .join("\n");
 
@@ -25,13 +31,18 @@ const SELECTORS = [
   '[data-app="terminal"]',
   "#terminal-input",
   ".terminal__scrollback",
+  "#projects .cards",
 ];
 
 // what a selector has to look like in the markup for it to find anything.
 function matcher(selector) {
-  if (selector.startsWith("#")) return new RegExp(`id="${selector.slice(1)}"`);
-  if (selector.startsWith(".")) return new RegExp(`class="[^"]*${selector.slice(1)}[" ]`);
-  return new RegExp(selector.slice(1, -1));
+  const parts = selector.split(/\s+/).map((part) => {
+    if (part.startsWith("#")) return `id="${part.slice(1)}"`;
+    if (part.startsWith(".")) return `class="[^"]*${part.slice(1)}[" ]`;
+    return part.slice(1, -1);
+  });
+
+  return new RegExp(parts.join("[\\s\\S]*"));
 }
 
 describe("the markup the scripts expect", () => {
