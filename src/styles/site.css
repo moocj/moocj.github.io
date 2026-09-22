@@ -327,7 +327,7 @@ footer {
   list-style: none;
 }
 
-.projects__items {
+.projects__item {
   display: block;
   width: 100%;
   padding: var(--space-1) var(--space-2);
