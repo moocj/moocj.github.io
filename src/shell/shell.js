@@ -62,9 +62,12 @@ export function createShell({ apps, defaultApp, storage }) {
 
     for (const button of appCloseButtons) {
       button.addEventListener("click", () => {
+        const closed = button.closest("[data-app]")?.dataset.app;
+
         hideApps();
         // prevent focusing on app that no longer exists
-        appButtons[0]?.focus();
+        // now focus on the app that just closed
+        appButtons.find((other) => other.dataset.appOpen === closed)?.focus();
       });
     }
 
