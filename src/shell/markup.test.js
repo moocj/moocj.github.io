@@ -19,6 +19,7 @@ const scripts = [
   "src/shell/entry.js",
   "src/shell/projects-app.js",
   "src/render/projects.js",
+  "src/shell/boot-screen.js",
 ]
   .map(read)
   .join("\n");
@@ -27,6 +28,7 @@ const SELECTORS = [
   "#desktop",
   "[data-desktop-open]",
   "[data-desktop-close]",
+  "[data-desktop-boot]",
   "[data-app-open]",
   "[data-app-close]",
   '[data-app="terminal"]',
@@ -36,6 +38,7 @@ const SELECTORS = [
   ".projects__list",
   ".projects__detail",
   "#projects .cards",
+  ".desktop__surface",
 ];
 
 // what a selector has to look like in the markup for it to find anything.

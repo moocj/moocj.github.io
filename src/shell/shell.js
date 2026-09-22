@@ -52,6 +52,15 @@ export function createShell({ apps, defaultApp, storage, boot }) {
       desktop.close();
       return;
     }
+
+    if (saved.app && byName.has(saved.app)) {
+      showApp(saved.app);
+      return;
+    }
+
+    // open with no app showing
+    hideApps();
+    appButtons[0]?.focus();
   }
 
   function start() {
