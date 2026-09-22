@@ -1,7 +1,7 @@
 import { createTerminal } from "./adapter.js";
 import { createShell } from "./shell.js";
 import { createStorage } from "./storage.js";
-import { renderProjects } from "./render/projects.js";
+import { renderProjects } from "../render/projects.js";
 
 renderProjects();
 
