@@ -64,7 +64,7 @@ export function createTerminal({
       event.preventDefault();
       const { line, listing } = complete(input.value, commands);
       fillInput(line);
-      if(listing.length > 0) write(listing.join("  "), "output");
+      if (listing.length > 0) write(listing.join("  "), "output");
       return;
     }
 
@@ -75,11 +75,11 @@ export function createTerminal({
   });
 
   app.addEventListener("keydown", (event) => {
-    if(!event.ctrlKey || event.altKey || event.metaKey || event.key !== "l") return;
+    if (!event.ctrlKey || event.altKey || event.metaKey || event.key !== "l") return;
 
     event.preventDefault();
     clear();
-  })
+  });
 
   write("Welcome. Type help to see what this terminal can do.", "output");
 
