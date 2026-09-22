@@ -1,6 +1,6 @@
 // Desktop shell
 
-export function createShell({ apps, defaultApp, storage }) {
+export function createShell({ apps, defaultApp, storage, boot }) {
   const desktop = document.querySelector("#desktop");
   const openButton = document.querySelector("[data-desktop-open]");
   const closeButton = document.querySelector("[data-desktop-close]");
@@ -8,11 +8,13 @@ export function createShell({ apps, defaultApp, storage }) {
   const appCloseButtons = [...document.querySelectorAll("[data-app-close]")];
   const byName = new Map(apps.map((app) => [app.name, app]));
 
+  let booted = false;
+
   // remember if the desktop is up and what was left in front view
   function remember() {
     const front = apps.find((app) => !app.element.hidden);
 
-    storage.write({ open: desktop.open, app: front ? front.name : null });
+    storage.write({ open: desktop.open, app: front ? front.name : null, booted });
   }
 
   function showApp(name) {
@@ -42,6 +44,14 @@ export function createShell({ apps, defaultApp, storage }) {
   function toggleDesktop() {
     if (desktop.open) desktop.close();
     else openDesktop();
+  }
+
+  // go from boot screen to desktop
+  function handOver(saved) {
+    if (!saved.open) {
+      desktop.close();
+      return;
+    }
   }
 
   function start() {
@@ -79,17 +89,13 @@ export function createShell({ apps, defaultApp, storage }) {
 
     // return desktop to the way the user left it
     const saved = storage.read();
-    if (!saved.open) return;
+    booted = saved.booted;
 
-    openDesktop();
-    if (saved.app && byName.has(saved.app)) {
-      showApp(saved.app);
-      return;
-    }
-
-    // open with no app showing
+    desktop.showModal();
     hideApps();
-    appButtons[0]?.focus();
+
+    const playing = boot.play({ seen: saved.booted, onDone: () => handOver(saved) });
+    if (playing) booted = true;
   }
 
   return { start };

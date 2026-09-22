@@ -2,7 +2,7 @@
 
 const KEY = "portfolio.desktop";
 
-const NOTHING = { open: false, app: null };
+const NOTHING = { open: false, app: null, booted: false };
 
 export function createStorage(store) {
   function read() {
@@ -14,6 +14,7 @@ export function createStorage(store) {
       return {
         open: saved.open === true,
         app: typeof saved.app === "string" ? saved.app : null,
+        booted: saved.booted === true,
       };
     } catch {
       return { ...NOTHING };
@@ -22,7 +23,14 @@ export function createStorage(store) {
 
   function write(state) {
     try {
-      store.setItem(KEY, JSON.stringify({ open: state.open === true, app: state.app ?? null }));
+      store.setItem(
+        KEY,
+        JSON.stringify({
+          open: state.open === true,
+          app: state.app ?? null,
+          booted: state.booted === true,
+        }),
+      );
     } catch {
       // don't need to do anything if it doesn't remember
     }
