@@ -2,7 +2,7 @@
 
 const ABOUT =
   " I am a 20 year old computer science student at the University of Nottingham. I enjoy all areas of computer science, with a particular interest in AI, ML and cyber security. I also, outside of formal learning, enjoy mathematics and its various relationships to computer science.";
-const EMAIL = "jackccmoocarme@gmail.com";
+const EMAIL = "jackcmoocarme@gmail.com";
 const PROJECT_LINES = [
   "Project one type-test - A simple typing test game that allows the user to test their typing speed against pre-determined word sets or importing their own words.",
   "Project two PLACEHOLDER - DESCRIPTION",
