@@ -1,4 +1,3 @@
-import { commands } from "./commands.js";
 import { createEngine } from "./engine.js";
 import { createHistory } from "./history.js";
 import { complete } from "./complete.js";
@@ -15,6 +14,7 @@ function makeLine(text, kind) {
 
 export function createTerminal({
   app,
+  commands,
   engine = createEngine({ clock: () => new Date(), commands }),
 }) {
   const scrollback = app.querySelector(".terminal__scrollback");

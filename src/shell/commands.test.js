@@ -1,12 +1,16 @@
 import { describe, expect, it } from "vitest";
 
-import { commands } from "./commands.js";
+import { createCommands } from "./commands.js";
+import { projects } from "../data/projects.js";
+import { site } from "../data/site.js";
 import { createEngine } from "./engine.js";
 
 // What the real registry says, and what the user sees when they read it.
 
 const FAKE_NOW = "2026-09-20T18:30:00.000Z";
 const clock = () => new Date(FAKE_NOW);
+
+const commands = createCommands({ site, projects });
 const engine = createEngine({ clock, commands });
 
 const linesOf = (input) => engine.run(input).lines;
@@ -83,6 +87,21 @@ describe("what the terminal claims about the site", () => {
 
   it("says the same thing about contacting you however you ask", () => {
     expect(textsOf("contact")).toEqual(textsOf("cat contact.txt"));
+  });
+
+  it("prints the projects it was handed, and not a list of its own", () => {
+    const injected = createEngine({
+      clock,
+      commands: createCommands({
+        site,
+        // only the two fields the projects command prints
+        projects: [{ title: "Only in this test", description: "A project that does not exist." }],
+      }),
+    });
+
+    const texts = injected.run("projects").lines.map((line) => line.text);
+
+    expect(texts).toEqual(["Only in this test - A project that does not exist."]);
   });
 
   it("prints the date the clock was holding, in UTC", () => {
