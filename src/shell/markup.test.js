@@ -34,7 +34,7 @@ const SELECTORS = [
   "#terminal-input",
   ".terminal__scrollback",
   ".projects__list",
-  ".projects_detail",
+  ".projects__detail",
   "#projects .cards",
 ];
 

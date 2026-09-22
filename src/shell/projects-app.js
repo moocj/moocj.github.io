@@ -25,7 +25,7 @@ export function createProjectsApp({ app, projects }) {
     title.textContent = project.title;
 
     const description = document.createElement("p");
-    description.Content = project.description;
+    description.textContent = project.description;
 
     const stack = document.createElement("p");
     stack.className = "stack";
@@ -46,7 +46,7 @@ export function createProjectsApp({ app, projects }) {
     detail.focus();
   }
 
-  for (const [index, project] of project.entries()) {
+  for (const [index, project] of projects.entries()) {
     const item = document.createElement("li");
     const button = document.createElement("button");
 
