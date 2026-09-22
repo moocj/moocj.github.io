@@ -2,10 +2,17 @@ import { createTerminal } from "./adapter.js";
 import { createShell } from "./shell.js";
 import { createStorage } from "./storage.js";
 import { renderProjects } from "../render/projects.js";
+import { createCommands } from "./commands.js";
+import { projects } from "../data/projects.js";
+import { site } from "../data/site.js";
 
 renderProjects();
 
-const terminal = createTerminal({ app: document.querySelector('[data-app="terminal"]') });
+const commands = createCommands({ site, projects });
+const terminal = createTerminal({
+  app: document.querySelector('[data-app="terminal"]'),
+  commands,
+});
 
 const storage = createStorage(window.localStorage);
 
