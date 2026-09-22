@@ -26,7 +26,7 @@ export function createBootScreen({ desktop, lines, delay = LINE_DELAY, hold = HO
   function line(text) {
     const element = document.createElement("p");
     element.className = "desktop__boot-line";
-    element.textcontent = text;
+    element.textContent = text;
     return element;
   }
 
