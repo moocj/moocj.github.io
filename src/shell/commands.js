@@ -46,6 +46,7 @@ export const commands = [
   {
     name: "cat",
     description: "Prints a file: cat about.txt",
+    completes: () => Object.keys(FILES),
     run: ({ args }) => {
       if (args.length === 0) {
         return { lines: [{ kind: "error", text: "cat: which file? try ls" }], effect: null };

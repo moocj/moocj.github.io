@@ -16,3 +16,9 @@ The proposed sections for my project are:
 ## The desktop
 
 Second view that contains a simple desktop OS, with a taskbar, app windows, applications on the display, and a working terminal.
+
+### Terminal keybinds
+
+Up and Down arrows move through previous commands.
+Tab autocompletes a command or file name.
+Ctrl+L clears the screen, and Ctrl+` closes the desktop.
