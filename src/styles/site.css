@@ -280,6 +280,7 @@ footer {
   margin: 0 0 var(--space-1);
   max-width: none;
   opacity: 0.8;
+  white-space: pre-wrap;
 }
 
 .terminal__line--input {

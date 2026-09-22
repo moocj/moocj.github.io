@@ -16,6 +16,6 @@ https://moocj.github.io
 
 The page exists with basic styling and information and cards for the projects.
 
-It also contains a desktop view with a semi functioning terminal output.
+It also contains a desktop view with a terminal that can take a handful of commands (type `help` to try it out).
 
 Future ideas are stored [here](docs/ideas.md)
