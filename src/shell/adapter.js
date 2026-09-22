@@ -1,5 +1,7 @@
 import { commands } from "./commands.js";
 import { createEngine } from "./engine.js";
+import { createHistory } from "./history.js";
+import { complete } from "./complete.js";
 
 const PROMPT = "$ ";
 
@@ -17,10 +19,22 @@ export function createTerminal({
 }) {
   const scrollback = app.querySelector(".terminal__scrollback");
   const input = app.querySelector("#terminal-input");
+  const history = createHistory();
 
   function write(text, kind) {
     scrollback.append(makeLine(text, kind));
     scrollback.scrollTop = scrollback.scrollHeight;
+  }
+
+  function clear() {
+    scrollback.replaceChildren();
+  }
+
+  function fillInput(line) {
+    if (line === null) return;
+
+    input.value = line;
+    input.setSelectionRange(line.length, line.length);
   }
 
   function submit() {
@@ -28,11 +42,12 @@ export function createTerminal({
     input.value = "";
     if (entered.trim() === "") return;
 
+    history.add(entered);
     write(`${PROMPT}${entered}`, "input");
     const result = engine.run(entered);
 
     if (result.effect === "clear") {
-      scrollback.replaceChildren();
+      clear();
       return;
     }
 
@@ -40,9 +55,31 @@ export function createTerminal({
   }
 
   input.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter") return;
-    submit();
+    if (event.key === "Enter") {
+      submit();
+      return;
+    }
+
+    if (event.key === "Tab") {
+      event.preventDefault();
+      const { line, listing } = complete(input.value, commands);
+      fillInput(line);
+      if(listing.length > 0) write(listing.join("  "), "output");
+      return;
+    }
+
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+      event.preventDefault();
+      fillInput(event.key === "ArrowUp" ? history.older(input.value) : history.newer(input.value));
+    }
   });
+
+  app.addEventListener("keydown", (event) => {
+    if(!event.ctrlKey || event.altKey || event.metaKey || event.key !== "l") return;
+
+    event.preventDefault();
+    clear();
+  })
 
   write("Welcome. Type help to see what this terminal can do.", "output");
 
