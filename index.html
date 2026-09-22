@@ -85,11 +85,36 @@
             />
           </div>
         </section>
+
+        <section
+          class="app"
+          id="app-projects"
+          data-app="projects"
+          aria-labelledby="app-projects-title"
+          hidden
+        >
+          <header class="app__bar">
+            <h3 id="app-projects-title" class="app__title">Projects</h3>
+            <button type="button" class="app__close" data-app-close>Close</button>
+          </header>
+          <div class="app__body">
+            <ul class="projects__list"></ul>
+            <article
+              class="projects__detail"
+              tabindex="-1"
+              aria-labelledby="projects-detail-title"
+              hidden
+            ></article>
+          </div>
+        </section>
       </div>
 
       <nav class="taskbar" aria-label="Desktop apps">
         <button type="button" class="taskbar__app" data-app-open="terminal" aria-pressed="true">
           Terminal
+        </button>
+        <button type="button" class="taskbar__app" data-app-open="projects" aria-pressed="false">
+          Projects
         </button>
         <button type="button" class="taskbar__exit" data-desktop-close>
           Close desktop <kbd>Esc</kbd>
