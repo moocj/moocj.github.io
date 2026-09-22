@@ -12,6 +12,7 @@ Any ideas for the portfolio/projects I have will go here.
 - Modify the whoami to make more sense since no login (22/09/26)
 - Have some way to present the user how to use the OS / terminal side (maybe a cool custom character I can build?) (22/09/26)
 - Clean up the way the time renders in the terminal (22/09/26)
+- Make certain terminal command outputs stand out / easier to read, like the projects output (22/09/26)
 
 ## Project ideas
 
