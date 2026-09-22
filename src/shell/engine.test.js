@@ -67,25 +67,25 @@ describe("the terminal engine", () => {
     expect(engine.run("   ")).toEqual({ lines: [], effect: null });
   });
 
-    it("runs a session line by line, one result each, and keeps none of them", () => {   
-    const session = ["echo one two", "hlep", "clear", "echo"];                         
+  it("runs a session line by line, one result each, and keeps none of them", () => {
+    const session = ["echo one two", "hlep", "clear", "echo"];
 
-    expect(session.map((line) => engine.run(line))).toEqual([                          
-      { lines: output(["one", "two"]), effect: null },                                 
-      {                                                                                
-        lines: [                                                                       
-          { kind: "error", text: "command not found: hlep" },                          
-          { kind: "error", text: "did you mean: help?" },                              
-        ],                                                                             
-        effect: null,                                                                  
-      },                                                                               
-      { lines: [], effect: "clear" },                                                  
-      { lines: [], effect: null },                                                     
-    ]);                                                                                
+    expect(session.map((line) => engine.run(line))).toEqual([
+      { lines: output(["one", "two"]), effect: null },
+      {
+        lines: [
+          { kind: "error", text: "command not found: hlep" },
+          { kind: "error", text: "did you mean: help?" },
+        ],
+        effect: null,
+      },
+      { lines: [], effect: "clear" },
+      { lines: [], effect: null },
+    ]);
 
     // Asking again gives the same answer: the engine holds no history of its own.
-    expect(engine.run("echo one two").lines).toEqual(output(["one", "two"]));          
-  });                                                                                  
+    expect(engine.run("echo one two").lines).toEqual(output(["one", "two"]));
+  });
 
   it("never reaches for the browser, the clock or randomness", () => {
     const source = readFileSync(fileURLToPath(new URL("./engine.js", import.meta.url)), "utf8");
