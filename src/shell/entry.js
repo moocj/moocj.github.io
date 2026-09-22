@@ -6,6 +6,8 @@ import { renderProjects } from "../render/projects.js";
 import { createCommands } from "./commands.js";
 import { projects } from "../data/projects.js";
 import { site } from "../data/site.js";
+import { createBootScreen } from "./boot-screen.js";
+import { bootLines } from "./boot.js";
 
 renderProjects();
 
@@ -23,7 +25,18 @@ const projectsApp = createProjectsApp({
 
 const storage = createStorage(window.localStorage);
 
+const apps = [terminal, projectsApp];
+const boot = createBootScreen({
+  desktop: document.querySelector("#desktop"),
+  lines: bootLines({
+    site,
+    projects,
+    apps: apps.map((app) => app.name),
+    commandCount: commands.length,
+  }),
+});
+
 // Right now opens to terminal since only one app, when icons appear will set to show nothing on default
-const shell = createShell({ apps: [terminal, projectsApp], defaultApp: terminal.name, storage });
+const shell = createShell({ apps, defaultApp: terminal.name, storage, boot });
 
 shell.start();

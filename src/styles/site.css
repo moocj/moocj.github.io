@@ -398,3 +398,18 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+
+.desktop__boot {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  padding: var(--space-2);
+}
+
+.desktop__boot-line {
+  margin: 0 0 0.25rem;
+}
+
+.desktop__surface[hidden] {
+  display: none;
+}
