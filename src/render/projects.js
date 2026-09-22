@@ -18,7 +18,7 @@ function buildCard(project) {
   card.append(title, description, stack);
 
   if (project.link) {
-    const link = document.createElment("a");
+    const link = document.createElement("a");
     link.href = project.link.href;
     link.textContent = project.link.label;
     card.append(link);
