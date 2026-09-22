@@ -17,6 +17,7 @@ const scripts = [
   "src/shell/shell.js",
   "src/shell/adapter.js",
   "src/shell/entry.js",
+  "src/shell/projects-app.js",
   "src/render/projects.js",
 ]
   .map(read)
@@ -29,8 +30,11 @@ const SELECTORS = [
   "[data-app-open]",
   "[data-app-close]",
   '[data-app="terminal"]',
+  '[data-app="projects"]',
   "#terminal-input",
   ".terminal__scrollback",
+  ".projects__list",
+  ".projects__detail",
   "#projects .cards",
 ];
 

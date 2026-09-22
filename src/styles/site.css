@@ -38,12 +38,12 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   line-height: 1.2;
   margin: 0 0 var(--space-1);
 }
 
-/* REDO later (h1 -> h3)*/
 h1 {
   font-size: 2rem;
 }
@@ -53,6 +53,10 @@ h2 {
 }
 h3 {
   font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p {
@@ -227,7 +231,8 @@ footer {
 
 .app__close,
 .taskbar__app,
-.taskbar__exit {
+.taskbar__exit,
+.projects__back {
   border: 1px solid var(--shell-line);
   border-radius: 0.25rem;
   background: none;
@@ -308,8 +313,49 @@ footer {
 }
 
 .terminal__input:focus-visible,
-.terminal__scrollback:focus-visible {
+.terminal__scrollback:focus-visible,
+.projects__detail:focus-visible {
   outline-offset: -4px;
+}
+
+.projects__list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  margin: 0;
+  padding: var(--space-2);
+  list-style: none;
+}
+
+.projects__item {
+  display: block;
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.projects__item:hover,
+.projects__item:focus-visible {
+  border-color: var(--shell-line);
+  background-color: rgb(255 255 255 /0.08);
+}
+
+.projects__detail {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+.projects__back {
+  margin-bottom: var(--space-2);
+  padding: 0.125rem 0.5rem;
 }
 
 @media (max-width: 35rem) {
